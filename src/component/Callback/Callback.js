@@ -1,12 +1,25 @@
-import React from 'react'
+import React from 'react';
+import {withAuth} from '../../Auth'
 
 
-function Callback(){
-  return(
-    <div className='title'>
-      <h2>Loading....</h2>
-    </div>  
-  )
+class Callback extends React.Component {
+
+  componentDidMount(){
+    const {handleAuth} = this.props;
+    
+    if (handleAuth) {
+      handleAuth();
+    }
+      
+  }
+
+  render(){
+    return(
+      <div className='title'>
+        <h2>Loading....</h2>
+      </div>  
+    )
+  }
 }
 
-export default Callback;
+export default withAuth(Callback);
