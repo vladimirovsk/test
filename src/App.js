@@ -11,11 +11,10 @@ import Profile from './component/Profile/Profile';
 import Callback from './component/Callback/Callback';
 
 import { AuthProvider } from './Auth'
-import { PrivateRoute} from './component/PrivateRoute'
+import { PrivateRoute } from './component/PrivateRoute'
 
 
 function App () {
-  const [auth, setAuth]  = React.useState(false)
     
     return (
       <AuthProvider>

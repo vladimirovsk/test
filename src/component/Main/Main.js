@@ -7,7 +7,7 @@ const Main = ()  => {
   return(
     <div className='title'>
       <div >MAIN</div>
-      <img src={logo} style={{width: '50%'}}/>
+      <img src={logo} alt='logo' style={{width: '50%'}}/>
     </div>
   )
 }

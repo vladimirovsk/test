@@ -4,9 +4,11 @@ import {withAuth} from '../Auth'
 
 export const PrivateRoute = withAuth(
   ({ component: RouteComponent, isAuth, ...rest }) => (
-<Route {...rest} render={routeProps => (
+<Route 
+ {...rest} 
+ render={routeProps => 
   isAuth 
-    ? (<RouteComponent {...routeProps}/>) 
-    : (<Redirect to='/login' />)
-)}/>
+    ? (<RouteComponent {...routeProps}/>)  
+    : (<Redirect to={'/login'} />)
+}/>
 )) 
