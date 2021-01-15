@@ -3,6 +3,7 @@ import logo from '../../logo.svg'
 
 
 const Main = ()  => {
+  
   return(
     <div className='title'>
       <div >MAIN</div>

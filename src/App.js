@@ -11,6 +11,7 @@ import Profile from './component/Profile/Profile';
 
 
 function App () {
+  const [auth, setAuth]  = React.useState(false)
     
     return (
       <div>
@@ -30,8 +31,10 @@ function App () {
           <Route path="/login">
             <Login />
           </Route>
+          
           <Route path="/profile">
-            <Profile />
+          {auth ? <Profile /> : <Login/>}
+            
           </Route>
         </Switch>
       </div>
