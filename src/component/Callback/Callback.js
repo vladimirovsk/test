@@ -16,7 +16,7 @@ class Callback extends React.Component {
   render(){
     return(
       <div className='title'>
-        <h2>Loading....</h2>
+        <h3>Loading....</h3>
       </div>  
     )
   }
