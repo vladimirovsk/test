@@ -1,14 +1,14 @@
 import React from 'react';
 import {
   Switch,
-  Route,
-  Redirect
+  Route
 } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
 import Main from './component/Main/Main';
 import Login from './component/Login/Login';
 import Profile from './component/Profile/Profile';
 import { AuthProvider } from './Auth'
+import { PrivateRoute} from './component/PrivateRoute'
 
 
 function App () {
@@ -28,10 +28,7 @@ function App () {
       <Switch>
           <Route exact path="/" component={Main} />
           <Route path="/login" component={Login} />          
-          <Route path="/profile">
-            {auth ? <Profile /> : <Login/>}  
-          </Route>
-          <Redirect to='/' />
+          <PrivateRoute path="/profile" component={Profile} />
         </Switch>
       </AuthProvider>
       )
