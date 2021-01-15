@@ -14,9 +14,12 @@ export default function Profile() {
       function handleSubmit(event) {
         event.preventDefault();
       }
+
+
     
       return (
         <div className="Profile">
+          <div className={'title'}>Your Profile</div>
           <Form onSubmit={handleSubmit}>
             <Form.Group size="lg" controlId="firstName">
               <Form.Label>First Name</Form.Label>
