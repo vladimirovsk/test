@@ -2,6 +2,7 @@ import React from 'react';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import './Login.css'
+import { AuthProvider } from '../../Auth'
 
 export default function Login() {
   const [email, setEmail] = React.useState("");
@@ -17,6 +18,7 @@ export default function Login() {
 
   return (
     <div className="Login">
+      <AuthProvider>
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
@@ -39,6 +41,7 @@ export default function Login() {
           Login
         </Button>
       </Form>
+      </AuthProvider>
     </div>
   );
 }

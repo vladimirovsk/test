@@ -2,19 +2,20 @@ import React from 'react';
 import {
   Switch,
   Route,
-  Link
+  Redirect
 } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
 import Main from './component/Main/Main';
 import Login from './component/Login/Login';
 import Profile from './component/Profile/Profile';
+import { AuthProvider } from './Auth'
 
 
 function App () {
   const [auth, setAuth]  = React.useState(false)
     
     return (
-      <div>
+      <AuthProvider>
         <Navbar bg="light" variant="light">
           
             <Nav className="mr-auto">
@@ -25,21 +26,16 @@ function App () {
       </Navbar>
 
       <Switch>
-          <Route exact path="/">
-            <Main />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          
+          <Route exact path="/" component={Main} />
+          <Route path="/login" component={Login} />          
           <Route path="/profile">
-          {auth ? <Profile /> : <Login/>}
-            
+            {auth ? <Profile /> : <Login/>}  
           </Route>
+          <Redirect to='/' />
         </Switch>
-      </div>
+      </AuthProvider>
       )
     }
-  
+   
 
 export default  App;
