@@ -32,7 +32,7 @@ function App () {
           <Route exact path="/login" component={Login} />  
           {/* <Route exact path="/profile" component={Profile} />     */}
           <Route exact path="/callback" component={Callback} />    
-          <PrivateRoute path="/profile" componen={Profile}/>
+          <PrivateRoute exact path="/profile" componen={Profile}/>
           <Redirect to='/' />
         </Switch>
       </AuthProvider>
