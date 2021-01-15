@@ -5,9 +5,9 @@ import {
   Link
 } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
-import Main from './component/Main';
-import Login from './component/Login';
-import Profile from './component/Profile';
+import Main from './component/Main/Main';
+import Login from './component/Login/Login';
+import Profile from './component/Profile/Profile';
 
 
 function App () {
